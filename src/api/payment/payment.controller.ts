@@ -4,6 +4,7 @@ import logger from '../../config/winston.config';
 import { PaymentService } from './payment.service';
 import { IPayment } from 'database/models/interfaces/IPayment';
 import { ResponseHandler } from '../../helpers/response.helper';
+import { eventEmitter } from '../../helpers/socket-server.helper';
 import { STATUS_CODES } from '../../constants/status-code.contants';
 
 export class PaymentController {
@@ -15,9 +16,11 @@ export class PaymentController {
         geoLocation: location,
       });
 
+      eventEmitter.emit('payment-creation', payment);
+
       return ResponseHandler.sendResponse(
         res,
-        STATUS_CODES.OK,
+        STATUS_CODES.CREATED,
         true,
         'Payment recorded',
         payment
