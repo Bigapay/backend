@@ -1,9 +1,9 @@
 {
-  "name": "rssb-backend-challenge",
+  "name": "payment-backend-challenge",
   "version": "1.0.0",
   "description": "Geo-Localizing Payments with Real-Time and Multiple System Notification Integration for a Large Scale System.",
   "main": "index.js",
-  "repository": "git@github.com:placideirandora/rssb-backend-challenge.git",
+  "repository": "git@github.com:placideirandora/payment-backend-challenge.git",
   "author": "Placide IRANDORA <34879554+placiderapson@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
