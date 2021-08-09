@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  app:
+    image: paymentbackendchallenge
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+    ports:
+      - 3000:3000
+
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - '3900:6379'
+
+  db:
+    image: postgres:10.3
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '3800:5432'
+volumes:
+  postgres:
