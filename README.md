@@ -48,7 +48,9 @@ You will have to download and install Postgres and Redis manually.
 - Create a Database called `payments`
 - Start Redis Server
 - Navigate to the Project Folder: `cd payment-backend-challenge`
-- Create a `.env` file and specify the following environment variables: `NODE_ENV=development` `REDIS_HOST=localhost` `REDIS_PORT=6379`
+- Create a `.env` file and specify the following environment variables: `NODE_ENV=development`
+`DATABASE_URL=postgres://{database user name}:{database user password}@localhost:5432/payments`
+ `REDIS_HOST=localhost` `REDIS_PORT=6379`
 - Install Dependencies: `yarn install`
 - Build the Project: `yarn build` (ignore any warnings)
 - Start the Server: `yarn start`
