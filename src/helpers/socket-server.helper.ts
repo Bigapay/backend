@@ -2,8 +2,8 @@ import { EventEmitter } from 'events';
 import { Server, Socket } from 'socket.io';
 import redisClient from './redis-client.helper';
 
-import { findKeyByValue, findValuesByKeys } from '../utils';
 import logger from '../config/winston.config';
+import { findKeyByValue, findValuesByKeys } from '../utils';
 
 export const eventEmitter = new EventEmitter();
 

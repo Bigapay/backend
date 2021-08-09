@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
+import { validate } from './validation.middleware';
 import { PaymentController } from './payment.controller';
 import { PaymentValidation } from './payment.validations';
-import { validate } from './validation.middleware';
 
 export const paymentRouter = Router();
 
